@@ -14,3 +14,10 @@ function index(req, res){
         res.status(200).json(drinks)
     })
 }
+function show(req, res){
+    Drink.findById(req.params.id)
+    .then((drink)=>{
+        res.status(200).json(drink)
+    })
+}
+
