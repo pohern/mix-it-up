@@ -1,5 +1,17 @@
 <%- include('../partials/header') %>
 
-<h2>User Profile Page</h2>
+<h3><%= title %></h3>
+
+<div class="card" style="width: 18rem;">
+    <img src="<%= user.avatar %>" class="card-img-top" alt="...">
+    <div class="card-body">
+        <div class="card-body">
+            <h5 class="card-title">Name: <%= user.name %></h5>
+            <p class="card-text">Alias: <%= user.alias %></p>
+            <p class="card-text">Email: <%= user.email %></p>
+            <p class="card-text">Bio: <%= user.bio %></p>
+          </div>
+          <button>Update Info</button>
+  </div>
 
 <%- include('../partials/footer') %>
