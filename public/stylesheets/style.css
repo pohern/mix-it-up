@@ -3,7 +3,9 @@ body {
   background-color: gray;
   margin: 0;
 }
-
 nav {
-  background-color: white;
+  background-color: cornflowerblue;
+}
+a {
+  color: whitesmoke;
 }
