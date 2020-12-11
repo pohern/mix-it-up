@@ -6,7 +6,7 @@ const drinkSchema = new Schema({
     alcohols:[String],
     glassType:String,
     iceType:String,
-    instructions:[String],
+    instructions:String,
     ingredients:[String],
     prepTime:Number,
     difficulty:Number,
