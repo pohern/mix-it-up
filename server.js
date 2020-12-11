@@ -22,6 +22,7 @@ const authRouter = require("./routes/auth");
 const alcoholsRouter = require('./routes/alcohols');
 const cocktailsRouter = require('./routes/cocktails');
 const messagesRouter = require('./routes/messages');
+const apiRouter = require('./routes/api');
 
 const app = express();
 
@@ -54,6 +55,7 @@ app.use("/auth", authRouter);
 app.use('/alcohols', alcoholsRouter);
 app.use('/cocktails', cocktailsRouter);
 app.use('/messages', messagesRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
