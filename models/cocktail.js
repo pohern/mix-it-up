@@ -5,7 +5,7 @@ const instructionSchema = new Schema({
     glassType: {type:String, enum:['rocks','highball','martini','margarita','hurricane','shot']},
     prepTime: Number,
     difficulty: Number,
-    steps: [String],
+    steps: String,
     iceCube: {type:String, enums:['cubed','large sphere','crushed','large cube']},
 },{
     timestamps:true
