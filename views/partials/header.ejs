@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script defer src='/javascript/script.js'></script>
     <title><%= title %></title>
   </head>
   <body>
@@ -11,7 +12,25 @@
       <ul>
         <% if (user) { %>
         <li>
+          <a href="#">New Cocktail</a>
+        </li>
+        <li>
+          <a href="#">Add Alcohol</a>
+        </li>
+        <li>
+          <a href="#">Message Board</a>
+        </li>
+        <li>
+          <a href="#">User List</a>
+        </li>
+        <li>
+          <a href="#">My Profile</a>
+        </li>
+        <li>
           <a href="/auth/logout">Log Out</a>
+        </li>
+        <li class="nav-item">
+          <img id="avatarPhoto" height="50" src="<%= user.avatar %>" alt="" />
         </li>
         <% } else { %>
         <li>
