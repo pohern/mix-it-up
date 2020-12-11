@@ -1,13 +1,12 @@
 const router = require('express').Router()
-const cocktailsCtrl = require('../controllers/cocktails')
+const usersCtrl = require('../controllers/users')
 
-router.get('/new', isLoggedIn, cocktailsCtrl.new)
-
-
-
+router.get("/profile", isLoggedIn, usersCtrl.showProfile)
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
     res.redirect("/auth/google");
 }
+
+
 module.exports = router
