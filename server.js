@@ -19,6 +19,9 @@ require("./config/passport");
 // require routes
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
+const alcoholsRouter = require('./routes/alcohols');
+const cocktailsRouter = require('./routes/cocktails');
+const messagesRouter = require('./routes/messages');
 
 const app = express();
 
@@ -48,6 +51,9 @@ app.use(passport.session());
 // router middleware
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use('/alcohols', alcoholsRouter);
+app.use('/cocktails', cocktailsRouter);
+app.use('/messages', messagesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
