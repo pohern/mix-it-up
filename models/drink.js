@@ -9,7 +9,7 @@ const drinkSchema = new Schema({
     instructions:String,
     ingredients:[String],
     prepTime:Number,
-    difficulty:Number,
+    difficulty:{type:String, enum:['Beginner', 'Medium', 'Advanced']},
 })
 
 module.exports = mongoose.model('Drink', drinkSchema)
