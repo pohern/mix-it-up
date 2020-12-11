@@ -7,6 +7,8 @@ const instructionSchema = new Schema({
     difficulty: Number,
     steps: [String],
     iceCube: {type:String, enums:['cubed','large sphere','crushed','large cube']},
+},{
+    timestamps:true
 })
 
 const cocktailSchema = new Schema({
@@ -15,6 +17,8 @@ const cocktailSchema = new Schema({
     ingredients:[String],
     instructions: [instructionSchema],
     mixologist: {type:Schema.Types.ObjectId, ref: 'User'}
+},{
+    timestamps: true
 })
 
 module.exports = mongoose.model('Cocktail', cocktailSchema)
