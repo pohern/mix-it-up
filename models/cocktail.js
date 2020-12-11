@@ -16,7 +16,8 @@ const cocktailSchema = new Schema({
     alcohols: [{type: Schema.Types.ObjectId, ref: 'Alcohol'}],
     ingredients:[String],
     instructions: [instructionSchema],
-    mixologist: {type:Schema.Types.ObjectId, ref: 'User'}
+    mixologist: {type:Schema.Types.ObjectId, ref: 'User'},
+    favoritedBy:[{type:Schema.Types.ObjectId, ref:'User'}]
 },{
     timestamps: true
 })
