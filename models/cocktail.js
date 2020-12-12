@@ -5,7 +5,7 @@ const instructionSchema = new Schema({
     alcohols:[{type:Schema.Types.ObjectId, ref: 'Alcohol'}],
     glassType: {type:String, enum:['rocks','highball','martini','margarita','hurricane','shot']},
     prepTime: Number,
-    difficulty: Number,
+    difficulty: {type: Number, enum:[1, 2, 3, 4, 5]},
     steps: String,
     iceCube: {type:String, enums:['cubed','large sphere','crushed','large cube']},
 },{
