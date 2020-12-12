@@ -1,5 +1,57 @@
 <%- include('../partials/header') %>
 
-<h2>Cocktails Show Page</h2>
+<section id="show-page">
+    <div>Name: </div>
+    <div><%= cocktail.name %></div>
+    <div>Alcohols: </div><br>
+      <%- cocktails.alcohols.map((a) => 
+        `${a.name} , ${a.type}`
+      ) %>
+    <form id="add-alcohol-to-cocktail" action="/cocktails/<%= cocktail._id %>/alcohols" method="POST">
+      <select name="alcohols">
+        <%- alcohols.map(a => 
+          `<option value="${a._id}">${a.alcohols}</option>`
+        ) %>
+      </select>
+      <button type="submit">Add Liquor:</button>
+    </form><br>
+</section>
+<br><br><h2>Ingredients</h2>
+<form id="add-ingredients-form" method="POST"
+  action="/cocktails/<%= coktail._id %>/ingredients">
+  <label>Ingredients:</label>
+  <input name="ingredients">
+  <label>Instructions:</label>
+  <input name="instructions">
+  <input type="submit" value="Add Ticket" class='submitBtn'>
+</form>
+
+<% if (flight.tickets.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Seat</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.tickets.forEach(function(t) { %>
+          <tr>
+            <td><%= t.createdAt.toLocaleDateString() %></td>
+            <td><%= t.seat %></td>
+            <td>$<%= t.price %></td>
+            <td>
+                <form action="/<%= t._id %>/<%= flight._id%>?_method=DELETE" class='delete-form' method="POST">
+                    <button type='submit'>X</button>
+                </form>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Tickets Yet</h5>
+  <% } %>
 
 <%- include('../partials/footer') %>
