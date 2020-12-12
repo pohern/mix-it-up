@@ -1,5 +1,11 @@
 <%- include('../partials/header') %>
 
-<h2>Cocktails New Page</h2>
+<h2>Create A New Cocktail:</h2>
+<form action="/cocktails" method="POST">
+  <label>Cocktail Name:
+    <input type="text" name="name">
+  </label>
+  <input type="submit" value='Add Cocktail' class='submitBtn'>
+</form>
 
 <%- include('../partials/footer') %>

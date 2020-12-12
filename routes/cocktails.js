@@ -2,6 +2,10 @@ const router = require('express').Router()
 const cocktailsCtrl = require('../controllers/cocktails')
 
 router.get('/new', isLoggedIn, cocktailsCtrl.new)
+router.post('/', isLoggedIn, cocktailsCtrl.create)
+router.get('/index', isLoggedIn,cocktailsCtrl.index)
+router.get('/:id', isLoggedIn, cocktailsCtrl.show)
+router.delete('/:id', isLoggedIn, cocktailsCtrl.delete)
 
 
 

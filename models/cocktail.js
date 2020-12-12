@@ -12,13 +12,18 @@ const instructionSchema = new Schema({
     timestamps:true
 })
 
+const ingredientsSchema = new Schema({
+    mixers:[String],
+    garnishes:[String],
+})
+
 const cocktailSchema = new Schema({
     name: String,
-    alcohols: [{type: Schema.Types.ObjectId, ref: 'Alcohol'}],
-    ingredients:[String],
+    ingredients:[ingredientsSchema],
     instructions: [instructionSchema],
     mixologist: {type:Schema.Types.ObjectId, ref: 'User'},
-    favoritedBy:[{type:Schema.Types.ObjectId, ref:'User'}]
+    // favoritedBy:[{type:Schema.Types.ObjectId, ref:'User'}],
+    alcohols: [{type: Schema.Types.ObjectId, ref: 'Alcohol'}],
 },{
     timestamps: true
 })
