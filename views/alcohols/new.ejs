@@ -4,21 +4,31 @@
     <select>
         <% alcohols.forEach(function(a) { %>
             <%= alcohols %> 
-            <option><%= a.alcohol %></option>
+            <option><%= a.name %></option>
       <% }) %>
     </select>
 </p>
   <form id="add-alcohol-form" action="/alcohols/new" method="POST">
     <label>Alcohols:</label>
     <input type="text" name="name" placeholder="Brand...">
-    <!-- <input type="text" name='type' placeholder="Type of Alcohol..."> -->
+    <label>Alcohol Type:
+        <select name="type">
+            <option value="Whiskey">Whiskey</option>
+            <option value="Bourbon">Bourbon</option>
+            <option value="Vodka">Vodka</option>
+            <option value="Gin">Gin</option>
+            <option value="Tequila">Tequila</option>
+            <option value="Rum">Rum</option>
+          </select>
+      </label><br><br>
     <input type="submit" value="Add Alcohol">
   </form>
   <tbody>
           <h4>Alcohols:</h4>
         <% alcohols.forEach(function(a) { %>
         <tr>
-            <td><%= a.alcohol %><br></td>
+            <td>Brand:<%= a.name %></td>
+            <td>Liquor:<%= a.type %></td>
             <td>
                 <form action="/alcohols/<%= a._id%>?_method=DELETE" class='delete-form' method="POST">
                     <button type='submit'>X</button>
