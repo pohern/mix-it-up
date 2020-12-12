@@ -24,6 +24,7 @@ const cocktailsRouter = require('./routes/cocktails');
 const messagesRouter = require('./routes/messages');
 const apiRouter = require('./routes/api');
 const usersRouter = require('./routes/users');
+const ingredientsRouter = require('./routes/ingredients');
 
 const app = express();
 
@@ -58,6 +59,7 @@ app.use('/cocktails', cocktailsRouter);
 app.use('/messages', messagesRouter);
 app.use('/api', apiRouter);
 app.use('/users', usersRouter);
+app.use('/', ingredientsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

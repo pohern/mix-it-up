@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const instructionSchema = new Schema({
-    alcohols:[{type:Schema.Types.ObjectId, ref: 'Alcohol'}],
     glassType: {type:String, enum:['rocks','highball','martini','margarita','hurricane','shot']},
     prepTime: Number,
     difficulty: {type: Number, enum:[1, 2, 3, 4, 5]},
