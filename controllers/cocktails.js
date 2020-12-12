@@ -16,6 +16,7 @@ function newCocktail(req, res){
         title: "New Cocktail",
         user: req.user,
         results: null,
+        alcohols
       })
 }
 
