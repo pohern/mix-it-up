@@ -1,5 +1,31 @@
 <%- include('../partials/header') %>
 
-<h2>Alcohol New Page</h2>
+<p>Please first ensure that the Alcohol is not in the dropdown:
+    <select>
+        <% alcohols.forEach(function(a) { %>
+            <%= alcohols %> 
+            <option><%= a.alcohol %></option>
+      <% }) %>
+    </select>
+</p>
+  <form id="add-alcohol-form" action="/alcohols/new" method="POST">
+    <label>Alcohols:</label>
+    <input type="text" name="name" placeholder="Brand...">
+    <!-- <input type="text" name='type' placeholder="Type of Alcohol..."> -->
+    <input type="submit" value="Add Alcohol">
+  </form>
+  <tbody>
+          <h4>Alcohols:</h4>
+        <% alcohols.forEach(function(a) { %>
+        <tr>
+            <td><%= a.alcohol %><br></td>
+            <td>
+                <form action="/alcohols/<%= a._id%>?_method=DELETE" class='delete-form' method="POST">
+                    <button type='submit'>X</button>
+                </form>
+            </td>
+        <% }) %>
+      </tr>
+ </tbody>
 
 <%- include('../partials/footer') %>
