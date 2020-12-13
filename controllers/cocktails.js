@@ -31,6 +31,7 @@ function create(req, res){
     .populate('alcohols')
     .populate('mixologist')
     .then(()=>{
+        console.log('Please Run Here')
         res.redirect(`/cocktails/${cocktail._id}`)
     })
 }

@@ -1,55 +1,69 @@
 <%- include('../partials/header') %>
 
 <h2>Create A New Cocktail:</h2>
-<form action="/cocktails" method="POST">
-  <label>Cocktail Name:
-    <input type="text" name="name">
-  </label>
-  <input type="submit" value='Add Cocktail' class='submitBtn'>
+<form action="/cocktails" method='POST'>
+    <label>Name:
+        <input type="text" name='name'>
+    </label><br>
+    <label>Mixers:
+        <input type="text" name='ingredients/mixers' placeholder="Enter any mixers.."><br>
+    </label><br>
+    <label>Garnishes:
+        <input type="text" name='ingredients/garnishes' placeholder="Enter garnishes">
+    </label><br>
+    <label>Instructions: <br>
+        <label>Glass Type:
+        <select name="instructions/glassType">
+            <option value="rocks">Rocks</option>
+            <option value="high Ball">High Ball</option>
+            <option value="martini">Martini</option>
+            <option value="margarita">Margarita</option>
+            <option value="hurricane">Hurricane</option>
+            <option value="shot">Shot</option>
+          </select>
+        </label><br>
+        <label>Prep Time:
+            <input type="Number" name="instructions/prepTime"placeholder="Enter prep time">
+        </label><br>
+        <label>Difficulty:
+            <select name="instructions/difficulty">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+        </label><br>
+        <label>Steps:
+            <input type="text" name="instructions/steps" placeholder="Enter steps">
+        </label><br>
+        <label>Ice Cube Type:
+            <select name="instructions/iceCube">
+                <option value="cubed">Cubed Ice</option>
+                <option value="large sphere">Large Ice Sphere</option>
+                <option value="crushed">Crushed Ice</option>
+                <option value="large cube">Large Ice Cube</option>
+            </select>
+        </label><br>
+    </label><br>
+    <label>
+        <input type="text" hidden name="mixologist" value='user.id'>
+    </label>
+    <label>Alcohols:
+        <select>
+            <% alcohols.forEach(function(a) { %>
+                <%= alcohols %> 
+                <option><%= a.name %></option>
+          <% }) %>
+        </select> 
+    </label><br>
+<input type="submit" value='Add Cocktail'>
 </form>
-<h4>Alcohols:</h4>
-    <% alcohols.forEach(function(a) { %>
-    <tr>
-        <td><%= a.name %></td>
-        <input type="submit" value="Add Alcohol" class='submitBtn'>
-    <% }) %>
-    
-<br><br><h2>Ingredients</h2>
-<form id="add-ingredients-form" method="POST"
-  action="/cocktails/<%= cocktail._id %>/ingredients">
-  <label>Mixers:</label>
-  <input name="mixers" placeholder="Enter Mixers...">
-  <label>Garnishes</label>
-  <input name="garnishes" placeholder="Enter any garnishes..">
 
-<br><br><h2>Instructions</h2>
-<form id="add-instructions-form" method="POST"
-  action="/cocktails/<%= cocktail._id %>/instructions">
-  <label>Glass Type:
-    <select name="glassType">
-        <option value="rocks">Rocks Glass</option>
-        <option value="highball">Highball Glass</option>
-        <option value="martini">Martini Glass</option>
-        <option value="margarita">Margartia Glass</option>
-        <option value="hurricane">Hurricane Glass</option>
-        <option value="shot">Shot Glass</option>
-      </select>
-  </label>
-  <label>Prep Time:</label>
-  <input name="prepTime" placeholder="Enter prep time...">
-  <label>Difficulty:</label>
-  <input name="difficulty" placeholder="Enter difficulty(1-5)...">
-  <label>Steps:</label>
-  <input name="steps" placeholder="Enter steps...">
-  <label>Ice Type:
-    <select name="iceCube">
-        <option value="cubed">Cubed Ice</option>
-        <option value="large sphere">Large Ice Sphere</option>
-        <option value="crushed">Crushed Ice</option>
-        <option value="large cube">Large Ice Cube</option>
-      </select>
-  </label>
-  <input type="submit" value="Add Ingredients" class='submitBtn'>
-</form>
 
 <%- include('../partials/footer') %>
