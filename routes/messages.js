@@ -7,6 +7,7 @@ router.post('/', isLoggedIn, messagesCtrl.create);
 router.get('/:id', isLoggedIn, messagesCtrl.show);
 router.post('/:id', isLoggedIn, messagesCtrl.reply);
 router.delete('/:id', isLoggedIn, messagesCtrl.delete)
+router.delete('/:messageId/:replyId', isLoggedIn, messagesCtrl.deleteReply)
 
 
 function isLoggedIn(req, res, next) {

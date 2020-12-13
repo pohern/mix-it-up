@@ -12,17 +12,24 @@ module.exports = {
 }
 
 function newCocktail(req, res){
-    res.render("cocktails/new", {
-        title: "New Cocktail",
-        user: req.user,
-        results: null,
-        alcohols
-      })
+    Alcohol.find({})
+    .populate('alcohols')
+    .then((alcohols, cocktail)=>{
+        res.render("cocktails/new", {
+            title: "New Cocktail",
+            user: req.user,
+            results: null,
+            alcohols,
+            cocktail
+          })
+    })
 }
 
 function create(req, res){
     const cocktail = new Cocktail(req.body)
     cocktail.save()
+    .populate('alcohols')
+    .populate('mixologist')
     .then(()=>{
         res.redirect(`/cocktails/${cocktail._id}`)
     })
