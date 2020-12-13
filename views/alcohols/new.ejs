@@ -27,8 +27,8 @@
           <h4>Alcohols:</h4>
         <% alcohols.forEach(function(a) { %>
         <tr>
-            <td>Brand:<%= a.name %></td>
-            <td>Liquor:<%= a.type %></td>
+            <td>Brand: <%= a.name %></td>
+            <td>Liquor: <%= a.type %></td>
             <td>
                 <form action="/alcohols/<%= a._id%>?_method=DELETE" class='delete-form' method="POST">
                     <button type='submit'>X</button>
