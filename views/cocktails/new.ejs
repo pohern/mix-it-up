@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>Create A New Cocktail:</h2>
-<form action="/cocktails" method='POST'>
+<form action="/cocktails/index" method='POST'>
     <label>Name:
         <input type="text" name='name'>
     </label><br>
@@ -52,7 +52,7 @@
         </label><br>
     </label><br>
     <label>
-        <input type="text" hidden name="mixologist" value='user.id'>
+        <input type="text" hidden name="mixologist" value='<%= user.name %>'>
     </label>
     <label>Alcohols:
         <select>

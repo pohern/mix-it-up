@@ -28,8 +28,6 @@ function newCocktail(req, res){
 function create(req, res){
     const cocktail = new Cocktail(req.body)
     cocktail.save()
-    .populate('alcohols')
-    .populate('mixologist')
     .then(()=>{
         console.log('Please Run Here')
         res.redirect(`/cocktails/${cocktail._id}`)
@@ -45,8 +43,6 @@ function index(req, res){
 
 function show(req, res){
     Cocktail.findById(req.params.id)
-    .populate('mixologist')
-    .populate('alcohols')
     .then((cocktail)=>{
         Alcohol.find({_id: {$nin: cocktail.alcohols}})
         .then((alcohols)=>{
