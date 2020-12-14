@@ -1,5 +1,6 @@
 const Cocktail = require('../models/cocktail')
 const Alcohol = require('../models/alcohol')
+const { default: Axios } = require('axios')
 
 module.exports = {
     new:newCocktail,
@@ -7,6 +8,8 @@ module.exports = {
     index,
     show,
     delete: deleteCocktail,
+    drinkQuery,
+
 
 
 }
@@ -26,11 +29,12 @@ function newCocktail(req, res){
 }
 
 function create(req, res){
+    console.log('Please Run Here')
+    console.log(req.user.name)
     const cocktail = new Cocktail(req.body)
-    req.body.mixologist = req.user.name
     cocktail.save()
     .then(()=>{
-        console.log('Please Run Here')
+        
         res.redirect(`/cocktails/${cocktail._id}`)
     })
 }
@@ -56,5 +60,12 @@ function deleteCocktail(req, res){
     Cocktail.findByIdAndDelete(req.params.id)
     .then(()=>{
         res.redirect('/cocktails/index')
+    })
+}
+
+function drinkQuery(req, res){
+    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    .then((response) => {
+        res.render('cocktails/random', {title: 'Random Cocktail', user: req.user, cocktail: response.data})
     })
 }

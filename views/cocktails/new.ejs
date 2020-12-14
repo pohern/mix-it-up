@@ -1,4 +1,7 @@
 <%- include('../partials/header') %>
+<form action="/cocktails/random" method="POST">
+    <button class="btn waves-effect waves-light" type="submit">Add Random Cocktail</button>
+</form>
 
 <h2>Create A New Cocktail:</h2>
 <form action="/cocktails/index" method='POST'>
@@ -49,10 +52,9 @@
             <option value="large cube">Large Ice Cube</option>
         </select>
     </label><br>
-    
-    
 <input type="submit" value='Add Cocktail'>
 </form>
+
 
 
 <%- include('../partials/footer') %>
