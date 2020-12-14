@@ -27,6 +27,7 @@ function newCocktail(req, res){
 
 function create(req, res){
     const cocktail = new Cocktail(req.body)
+    req.body.mixologist = req.user.name
     cocktail.save()
     .then(()=>{
         console.log('Please Run Here')
