@@ -6,50 +6,48 @@
         <input type="text" name='name'>
     </label><br>
     <label>Mixers:
-        <input type="text" name='ingredients/mixers' placeholder="Enter any mixers.."><br>
+        <input type="text" name='mixers' placeholder="Enter any mixers.."><br>
     </label><br>
     <label>Garnishes:
-        <input type="text" name='ingredients/garnishes' placeholder="Enter garnishes">
+        <input type="text" name='garnishes' placeholder="Enter garnishes">
     </label><br>
-    <label>Instructions: <br>
-        <label>Glass Type:
-        <select name="instructions/glassType">
-            <option value="rocks">Rocks</option>
-            <option value="high Ball">High Ball</option>
-            <option value="martini">Martini</option>
-            <option value="margarita">Margarita</option>
-            <option value="hurricane">Hurricane</option>
-            <option value="shot">Shot</option>
-          </select>
-        </label><br>
-        <label>Prep Time:
-            <input type="Number" name="instructions/prepTime"placeholder="Enter prep time">
-        </label><br>
-        <label>Difficulty:
-            <select name="instructions/difficulty">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-        </label><br>
-        <label>Steps:
-            <input type="text" name="instructions/steps" placeholder="Enter steps">
-        </label><br>
-        <label>Ice Cube Type:
-            <select name="instructions/iceCube">
-                <option value="cubed">Cubed Ice</option>
-                <option value="large sphere">Large Ice Sphere</option>
-                <option value="crushed">Crushed Ice</option>
-                <option value="large cube">Large Ice Cube</option>
+    <label>Glass Type:
+    <select name="instructions/glassType">
+        <option value="rocks">Rocks</option>
+        <option value="high Ball">High Ball</option>
+        <option value="martini">Martini</option>
+        <option value="margarita">Margarita</option>
+        <option value="hurricane">Hurricane</option>
+        <option value="shot">Shot</option>
+        </select>
+    </label><br>
+    <label>Prep Time:
+        <input type="Number" name="prepTime"placeholder="Enter prep time">
+    </label><br>
+    <label>Difficulty:
+        <select name="difficulty">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
             </select>
-        </label><br>
+    </label><br>
+    <label>Steps:
+        <input type="text" name="steps" placeholder="Enter steps">
+    </label><br>
+    <label>Ice Cube Type:
+        <select name="iceCube">
+            <option value="cubed">Cubed Ice</option>
+            <option value="large sphere">Large Ice Sphere</option>
+            <option value="crushed">Crushed Ice</option>
+            <option value="large cube">Large Ice Cube</option>
+        </select>
     </label><br>
     <label>
         <input type="text" hidden name="mixologist" value='<%= user.name %>'>

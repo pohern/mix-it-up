@@ -11,15 +11,16 @@ const instructionSchema = new Schema({
     timestamps:true
 })
 
-const ingredientsSchema = new Schema({
-    mixers:[String],
-    garnishes:[String],
-})
 
 const cocktailSchema = new Schema({
     name: String,
-    ingredients:[ingredientsSchema],
-    instructions: [instructionSchema],
+    mixers:{type:String},
+    garnishes: {type:String},
+    glassType: {type:String, enum:['rocks','highball','martini','margarita','hurricane','shot']},
+    prepTime: Number,
+    difficulty: {type: Number, enum:[1, 2, 3, 4, 5]},
+    steps: String,
+    iceCube: {type:String, enums:['cubed','large sphere','crushed','large cube']},
     mixologist: {type:Schema.Types.ObjectId, ref: 'User'},
     // favoritedBy:[{type:Schema.Types.ObjectId, ref:'User'}],
     alcohols: [{type: Schema.Types.ObjectId, ref: 'Alcohol'}],
