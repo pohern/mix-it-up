@@ -12,12 +12,24 @@
                 <h4>Name:<%= cocktail.drinks[0].strDrink %></h4>
                 <p>Glass Type: <%= cocktail.drinks[0].strGlass %></p>
                 <p>Instructions: <%= cocktail.drinks[0].strInstructions %></p>
+                <% if (!cocktail.drinks[0].strIngredient1 === null && !cocktail.drinks[0].strMeasure1 === null) {%> 
                 <p>Ingredients: <%= cocktail.drinks[0].strIngredient1 %>: <%= cocktail.drinks[0].strMeasure1 %> </p>
+                <% } %>
+                <% if (!cocktail.drinks[0].strIngredient2 === null && !cocktail.drinks[0].strMeasure2 === null){ %>
                 <p>Ingredients: <%= cocktail.drinks[0].strIngredient2 %>: <%= cocktail.drinks[0].strMeasure2 %> </p>
+                <% } %>
+                <% if (!cocktail.drinks[0].strIngredient3 === null && !cocktail.drinks[0].strMeasure3 === null) {%>
                 <p>Ingredients: <%= cocktail.drinks[0].strIngredient3 %>: <%= cocktail.drinks[0].strMeasure3 %> </p>
+                <% } %>
+                <% if (!cocktail.drinks[0].strIngredient4 === null && !cocktail.drinks[0].strMeasure4 === null) {%>
                 <p>Ingredients: <%= cocktail.drinks[0].strIngredient4 %>: <%= cocktail.drinks[0].strMeasure4 %> </p>
-                <p>Ingredients: <%= cocktail.drinks[0].strIngredient5 %>: <%= cocktail.drinks[0].strMeasure5 %> </p>
+                <% } %>
+                <% if (!cocktail.drinks[0].strIngredient5 === null && !cocktail.drinks[0].strMeasure5 === null) {%>
+                <p>Ingredients: <%= cocktail.drinks[0].strIngredient5 %>: <%= cocktail.drinks[0].strMeasure5 %> {</p>
+                <% } %>
+                <% if (!cocktail.drinks[0].strIngredient6 === null && !cocktail.drinks[0].strMeasure6 === null) {%>
                 <p>Ingredients: <%= cocktail.drinks[0].strIngredient6 %>: <%= cocktail.drinks[0].strMeasure6 %> </p>
+                <% } %>
             </div>
             </div>
         </div>
