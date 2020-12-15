@@ -9,34 +9,34 @@
                 <img src="<%= cocktail.drinks[0].strDrinkThumb %>" alt="">
             </div>
             <div class="card-content">
-                <h4>Name:<%= cocktail.drinks[0].strDrink %></h4>
+                <h4>Name: <%= cocktail.drinks[0].strDrink %></h4>
                 <p>Glass Type: <%= cocktail.drinks[0].strGlass %></p>
                 <p>Instructions: <%= cocktail.drinks[0].strInstructions %></p>
-                <% if(cocktail.drinks[0].strIngredients1 !== 'null' && cocktail.drinks[0].strMeasure1 !== 'null') {%> 
-                <p>Ingredients: <%= cocktail.drinks[0].strIngredient1 %>: <%= cocktail.drinks[0].strMeasure1 %> </p>
+                <% if(cocktail.drinks[0].strIngredients1 !== null && cocktail.drinks[0].strMeasure1 !== null) {%> 
+                <p>Ingredients: <%= cocktail.drinks[0].strMeasure1 %> <%= cocktail.drinks[0].strIngredient1 %> </p>
                 <% } else { %>
                 <% } %>
-                <% if(cocktail.drinks[0].strIngredients2 !== 'null' && cocktail.drinks[0].strMeasure2 !== 'null') {%> 
+                <% if(cocktail.drinks[0].strIngredients2 !== null && cocktail.drinks[0].strMeasure2 !== null) {%> 
                     <p>Ingredients:<%= cocktail.drinks[0].strMeasure2 %> <%= cocktail.drinks[0].strIngredient2 %> </p>
                 <% } else { %>
                 <% } %>
-                <% if(cocktail.drinks[0].strIngredients3 !== 'null' && cocktail.drinks[0].strMeasure3 !== 'null') {%> 
+                <% if(cocktail.drinks[0].strIngredients3 !== null && cocktail.drinks[0].strMeasure3 !== null) {%> 
                     <p>Ingredients:  <%= cocktail.drinks[0].strMeasure3 %> <%= cocktail.drinks[0].strIngredient3 %> </p>
                 <% } else { %>
                 <% } %>
-                <% if(cocktail.drinks[0].strIngredients4 !== 'null' && cocktail.drinks[0].strMeasure4 !== 'null') {%> 
+                <% if(cocktail.drinks[0].strIngredients4 !== null && cocktail.drinks[0].strMeasure4 !== null) {%> 
                     <p>Ingredients:<%= cocktail.drinks[0].strMeasure4 %> <%= cocktail.drinks[0].strIngredient4 %></p>
                 <% } else { %>
                 <% } %>
-                <% if(cocktail.drinks[0].strIngredients5 !== 'null' && cocktail.drinks[0].strMeasure5 !== 'null') {%> 
+                <% if(cocktail.drinks[0].strIngredients5 !== null && cocktail.drinks[0].strMeasure5 !== null) {%> 
                     <p>Ingredients:  <%= cocktail.drinks[0].strMeasure5 %> <%= cocktail.drinks[0].strIngredient5 %> </p>
                 <% } else { %>
                 <% } %>
-                <% if(cocktail.drinks[0].strIngredients6 !== 'null' && cocktail.drinks[0].strMeasure6 !== 'null') {%> 
+                <% if(cocktail.drinks[0].strIngredients6 !== null && cocktail.drinks[0].strMeasure6 !== null) {%> 
                     <p>Ingredients:<%= cocktail.drinks[0].strMeasure6 %> <%= cocktail.drinks[0].strIngredient6 %> </p>
                 <% } else { %>
                 <% } %>
-                <% if(cocktail.drinks[0].strIngredients7 !== 'null' && cocktail.drinks[0].strMeasure7 !== 'null') {%> 
+                <% if(cocktail.drinks[0].strIngredients7 !== null && cocktail.drinks[0].strMeasure7 !== null) {%> 
                     <p>Ingredients:<%= cocktail.drinks[0].strMeasure7 %> <%= cocktail.drinks[0].strIngredient7 %> </p>
                 <% } else { %>
                 <% } %>
