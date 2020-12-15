@@ -1,6 +1,6 @@
 const Cocktail = require('../models/cocktail')
 const Alcohol = require('../models/alcohol')
-const { default: Axios } = require('axios')
+const Axios = require('axios')
 
 module.exports = {
     new:newCocktail,
@@ -9,9 +9,6 @@ module.exports = {
     show,
     delete: deleteCocktail,
     drinkQuery,
-
-
-
 }
 
 function newCocktail(req, res){
@@ -34,7 +31,6 @@ function create(req, res){
     const cocktail = new Cocktail(req.body)
     cocktail.save()
     .then(()=>{
-        
         res.redirect(`/cocktails/${cocktail._id}`)
     })
 }
