@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const alcoholsCtrl = require('../controllers/alcohols')
 
-router.post('/new', isLoggedIn, alcoholsCtrl.create)
+router.post('/', isLoggedIn, alcoholsCtrl.create)
 router.get('/new', isLoggedIn, alcoholsCtrl.new)
 router.delete('/:id', isLoggedIn, alcoholsCtrl.deleteAlcohol)
 
