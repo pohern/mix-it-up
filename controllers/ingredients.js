@@ -2,7 +2,6 @@ const Cocktail  = require('../models/cocktail')
 
 module.exports = {
     createIngredient,
-
 }
 
 function createIngredient(req, res){
