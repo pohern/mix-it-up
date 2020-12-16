@@ -30,7 +30,13 @@
         </select>
         <button type="submit">Add Alcohol</button>
       </form><br>
-    
+      <td>
+        <% if (user.name === cocktail.mixologist.name) {%> 
+        <form action="/cocktails/<%= cocktail._id %>?_method=DELETE" class='delete-form' method="POST">
+            <button type='submit'>X</button>
+        </form>
+        <% } %>
+    </td>
 </section>
 
 
