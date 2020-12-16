@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 
 const cocktailSchema = new Schema({
     name: String,
-    mixers:{type:String},
+    ingredients:{type:String},
     garnishes: {type:String},
     glassType: {type:String},
     prepTime: Number,

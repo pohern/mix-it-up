@@ -29,6 +29,7 @@ function create(req, res){
     console.log(req.user.name)
     const cocktail = new Cocktail(req.body)
     req.body.mixologist = req.user.name
+    console.log(cocktail)
     cocktail.save()
     .then(()=>{
         res.redirect(`/cocktails/${cocktail._id}`)
