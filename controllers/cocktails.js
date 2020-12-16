@@ -9,6 +9,7 @@ module.exports = {
     show,
     delete: deleteCocktail,
     drinkQuery,
+    addToAlcohols,
 }
 
 function newCocktail(req, res){
@@ -64,5 +65,16 @@ function drinkQuery(req, res){
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     .then((response) => {
         res.render('cocktails/random', {title: 'Random Cocktail', user: req.user, cocktail: response.data})
+    })
+}
+
+function addToAlcohols(req, res){
+    Cocktail.findById(req.params.id)
+    .then((cocktail)=>{
+        cocktail.alcohols.push(req.body.alcohols)
+        cocktail.save()
+        .then(()=>{
+            res.redirect(`/cocktails/${cocktail._id}`)
+        })
     })
 }

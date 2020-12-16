@@ -1,24 +1,32 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <div>Name: </div>
-    <div><%= cocktail.name %></div>
-    <div>Ingredients: </div>
-    <div><%= cocktail.ingredients %></div>
-    <div>Garnishes: </div>
-    <div><%= cocktail.garnishes %></div>
-    <div>Glass Type: </div>
-    <div><%= cocktail.glassType %></div>
-    <div>Prep Time: </div>
-    <div><%= cocktail.prepTime %></div>
-    <div>Difficulty: </div>
-    <div><%= cocktail.difficulty %></div>
-    <div>Steps: </div>
-    <div><%= cocktail.steps %></div>
-    <div>Ice Cube Type: </div>
-    <div><%= cocktail.iceCube %></div>
-    <div>Mixologist:</div>
-    <div><%= user.name %></div>
+    <div>Name: <%= cocktail.name %></div>
+    <div>Ingredients: <%= cocktail.ingredients %></div>
+    <% if (cocktail.garnishes === ''){%> 
+    <div>Garnishes: <%= cocktail.garnishes %></div>
+    <% } %>
+    <div>Glass Type: <%= cocktail.glassType %></div>
+    <% if (cocktail.prepTime === ''){%>
+    <div>Prep Time: <%= cocktail.prepTime %></div>
+    <% } %>
+    <% if (cocktail.difficulty === ''){%>
+    <div>Difficulty: <%= cocktail.difficulty %></div>
+    <% } %>
+    <div>Steps: <%= cocktail.steps %></div>
+    <% if (cocktail.iceCube === ''){%>
+    <div>Ice Cube Type: <%= cocktail.iceCube %></div>
+    <% } %>
+    <div>Mixologist:<%= user.name %></div>
+    <div>Alcohols:</div>
+    <form id="add-alcohol-to-cocktail" action="/cocktails/<%= cocktail._id %>/alcohols" method="POST">
+        <select name="alcohols">
+          <%- alcohols.map(a => 
+            `<option value="${a._id}">${a.alcohol}</option>`
+          ) %>
+        </select>
+        <button type="submit">Add Alcohol</button>
+      </form><br>
 </section>
 
 
