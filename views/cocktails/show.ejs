@@ -18,17 +18,19 @@
     <div>Ice Cube Type: <%= cocktail.iceCube %></div>
     <% } %>
     <div>Mixologist:<%= user.name %></div>
-    <div>Alcohols:</div>
+    <div>Alcohols: </div>
+      <%- cocktail.alcohols.map((a) => 
+        `${a.name}`
+      ) %>
     <form id="add-alcohol-to-cocktail" action="/cocktails/<%= cocktail._id %>/alcohols" method="POST">
         <select name="alcohols">
           <%- alcohols.map(a => 
-            `<option value="${a._id}">${a.alcohol}</option>`
+            `<option value="${a._id}">${a.name}</option>`
           ) %>
         </select>
         <button type="submit">Add Alcohol</button>
       </form><br>
 </section>
-
 
 
 <%- include('../partials/footer') %>
