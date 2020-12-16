@@ -26,9 +26,9 @@ function newCocktail(req, res){
 }
 
 function create(req, res){
-    console.log('Please Run Here')
     console.log(req.user.name)
     const cocktail = new Cocktail(req.body)
+    req.body.mixologist = req.user.name
     cocktail.save()
     .then(()=>{
         res.redirect(`/cocktails/${cocktail._id}`)
@@ -55,7 +55,7 @@ function show(req, res){
 function deleteCocktail(req, res){
     Cocktail.findByIdAndDelete(req.params.id)
     .then(()=>{
-        res.redirect('/cocktails/index')
+        res.redirect('/cocktails')
     })
 }
 

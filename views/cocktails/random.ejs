@@ -50,6 +50,9 @@
     <button class="btn waves-effect waves-light" type="submit">New Random Cocktail</button>
 </form>
 <form action="/cocktails" method="POST">
+    <input type="text" name="name" hidden value="<%= cocktail.drinks[0].strDrink %>">
+    <input type="text" name='steps' hidden value="<%=cocktail.drinks[0].strInstructions %>">
+    <input type="text" name="glassType"hidden value="<%=cocktail.drinks[0].strGlass %>">
     <button class="btn waves-effect waves-light" type="submit">Save Cocktail</button>
 </form>
 

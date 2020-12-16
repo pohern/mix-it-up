@@ -7,7 +7,7 @@ const cocktailSchema = new Schema({
     name: String,
     mixers:{type:String},
     garnishes: {type:String},
-    glassType: {type:String, enum:['rocks','highball','martini','margarita','hurricane','shot']},
+    glassType: {type:String},
     prepTime: Number,
     difficulty: {type: Number, enum:[1, 2, 3, 4, 5]},
     steps: String,

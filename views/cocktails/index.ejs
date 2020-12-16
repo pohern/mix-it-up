@@ -2,23 +2,23 @@
 
 <table>
     <thead>
-      <tr>
-        <th>Name:</th>
-      </tr>
+        <tr>
+            <th>Name:</th>
+        </tr>
     </thead>
     <tbody>
-      <% cocktails.forEach(function(c) { %>
+        <% cocktails.forEach(function(c) { %>
         <tr>
-          <td><%= c.name %></td>
-          <td><a href="/cocktails/<%= c._id %>">DETAILS</a></td>
-          <td>
-            <form action="/cocktails/<%= c._id %>?_method=DELETE" class='delete-form' method="POST">
-                <button type='submit'>X</button>
-            </form>
-        </td>
+            <td><%= c.name %></td>
+            <td><a href="/cocktails/<%= c._id %>">DETAILS</a></td>
+            <td>
+                <form action="/cocktails/<%= c._id %>?_method=DELETE" class='delete-form' method="POST">
+                    <button type='submit'>X</button>
+                </form>
+            </td>
         </tr>
-      <% }) %> 
+        <% }) %>
     </tbody>
-  </table>
+</table>
 
 <%- include('../partials/footer') %>
