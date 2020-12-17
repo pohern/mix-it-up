@@ -2,6 +2,7 @@ body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: gray;
   margin: 0;
+  text-align: center;
 }
 nav {
   background-color: cornflowerblue;
@@ -11,4 +12,13 @@ a {
 }
 .black{
   color: black;
+}
+table {
+  margin-left: 10%;
+}
+.form {
+  width: 400px;
+}
+.wide{
+  width: 500px;
 }

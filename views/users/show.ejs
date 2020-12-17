@@ -1,5 +1,12 @@
 <%- include('../partials/header') %>
 
-<h2>User Show Page</h2>
+<div>
+    <img id="avatarPhoto" src="<%= userInfo.avatar ? userInfo.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt="Card image cap">
+
+    <h5><%= userInfo.name %> </h5>
+    <p>Joined: <%= userInfo.createdAt.toLocaleString().split(',')[0] %> </p>
+    <p>Email: <a href="mailto:<%= userInfo.email %>"></a><%= userInfo.email %>  </p>
+
+</div>
 
 <%- include('../partials/footer') %>

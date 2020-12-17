@@ -10,7 +10,13 @@
             <p class="card-text">Alias: <%= user.alias %></p>
             <p class="card-text">Email: <%= user.email %></p>
             <p class="card-text">Bio: <%= user.bio %></p>
-          </div>
+            <form action="/users/profile?_method=PUT" method="POST">
+            <label>Alias:</label>
+            <input type="text" name="alias">
+            <label>Bio:</label>
+            <input type="text" name="bio">
+            <button type="submit">Update</button>
+            </form>
 
   </div>
 
