@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
-<form action="/cocktails/random" method="POST">
-    <button class="btn waves-effect waves-light" type="submit">Add Random Cocktail</button>
-</form>
+
+
+
 
 <h2>Create A New Cocktail:</h2>
+<hr>
 <form action="/cocktails" method='POST'>
     <label>Name:
         <input type="text" name='name'>
@@ -54,8 +55,10 @@
     </label><br>
     <input type="text" name="mixologist" hidden value="user.name" id="">
 <input type="submit" value='Add Cocktail'>
+</form><br><br>
+<h5>OR</h5>
+<form action="/cocktails/random" method="POST">
+    <button type="submit">Add Random Cocktail</button>
 </form>
-
-
 
 <%- include('../partials/footer') %>
