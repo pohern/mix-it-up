@@ -1,7 +1,7 @@
 # Mix It Up
 This app allows users to create cocktails, and to see cocktails created by other users. There is also a message board, so users can discuss their favorite cocktails!
 
-![screenshots](CocktailAPIPull.ong)
+![wireframe](CocktailAPIPull.ong)
 
 ## Technologies Used
 
