@@ -8,7 +8,7 @@ router.put('/:id', isLoggedIn, cocktailsCtrl.update)
 router.get('/', isLoggedIn,cocktailsCtrl.index)
 router.get('/:id', isLoggedIn, cocktailsCtrl.show)
 router.delete('/:id', isLoggedIn, cocktailsCtrl.delete)
-router.post('/:id/alcohols', cocktailsCtrl.addToAlcohols);
+router.post('/:id/alcohols', isLoggedIn, cocktailsCtrl.addToAlcohols);
 
 
 

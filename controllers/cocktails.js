@@ -80,6 +80,7 @@ function addToAlcohols(req, res){
     })
 }
 function update(req, res){
+    
     Cocktail.findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then(() => {
         res.redirect('/cocktails')
