@@ -19,8 +19,10 @@
         <input type="text" name='steps' value="<%= cocktail.steps%>"><br>
         <label>Ice Cube:</label>
         <input type="text" name='iceCube' value="<%= cocktail.iceCube%>"><br>
-        
         <button type='submit'>Update</button>
+    </form>
+    <form action="/cocktails/<%= cocktail._id %>?_method=DELETE" class='delete-form' method="POST">
+        <button type='submit'>X</button>
     </form>
     <% } else {%>
     <div>Name: <%= cocktail.name %></div>
@@ -40,24 +42,8 @@
     <div>Ice Cube Type: <%= cocktail.iceCube %></div>
     <% } %>
     <div>Mixologist:<%= cocktail.mixologist.name %></div>
-    <div>Alcohols: </div>
-    <%- cocktail.alcohols.map((a) => 
-        `${a.name}`
-      ) %>
-    <form id="add-alcohol-to-cocktail" action="/cocktails/<%= cocktail._id %>/alcohols" method="POST">
-        <select name="alcohols">
-            <%- alcohols.map(a => 
-            `<option value="${a._id}">${a.name}</option>`
-          ) %>
-        </select>
-        <button type="submit">Add Alcohol</button>
-    </form><br>
     <td>
-        <% if (user.name === cocktail.mixologist.name) {%>
-        <form action="/cocktails/<%= cocktail._id %>?_method=DELETE" class='delete-form' method="POST">
-            <button type='submit'>X</button>
-        </form>
-        <% } %>
+      
     </td>
 <% } %> 
 </section>

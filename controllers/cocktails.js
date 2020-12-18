@@ -30,6 +30,7 @@ function newCocktail(req, res){
 function create(req, res){
     req.body.mixologist = req.user._id
     Cocktail.create(req.body)
+    .populate('alcohols')
     .then((cocktail)=>{
         res.redirect(`/cocktails/${cocktail._id}`)
     })
