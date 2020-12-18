@@ -1,9 +1,32 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
+    <% if (user.name === cocktail.mixologist.name) {%>
+    <form action="/cocktails/<%= cocktail._id %>?_method=PUT" method="POST">
+        <label>Name:</label>
+        <input type="text" name='name' value="<%= cocktail.name%>"><br>
+        <label>Ingredients:</label>
+        <input type="text" name='ingredients' value="<%= cocktail.ingredients%>"><br>
+        <label>Garnishes:</label>
+        <input type="text" name='garnishes' value="<%= cocktail.garnishes%>"><br>
+        <label>Glass Type:</label>
+        <input type="text" name='glassType' value="<%= cocktail.glassType%>"><br>
+        <label>Prep Time:</label>
+        <input type="text" name='prepTime' value="<%= cocktail.prepTime%>"><br>
+        <label>Difficulty:</label>
+        <input type="text" name='difficulty' value="<%= cocktail.difficulty%>"><br>
+        <label>Steps:</label>
+        <input type="text" name='steps' value="<%= cocktail.steps%>"><br>
+        <label>Ice Cube:</label>
+        <input type="text" name='garnishes' value="<%= cocktail.iceCube%>"><br>
+        <label>Alcohols:</label>
+        <input type="text" name='garnishes' value="<%= cocktail.alcohols%>"><br>
+        <button type='submit'>Update</button>
+    </form>
+    <% } else {%>
     <div>Name: <%= cocktail.name %></div>
     <div>Ingredients: <%= cocktail.ingredients %></div>
-    <% if (cocktail.garnishes === ''){%> 
+    <% if (cocktail.garnishes === ''){%>
     <div>Garnishes: <%= cocktail.garnishes %></div>
     <% } %>
     <div>Glass Type: <%= cocktail.glassType %></div>
@@ -19,24 +42,25 @@
     <% } %>
     <div>Mixologist:<%= cocktail.mixologist.name %></div>
     <div>Alcohols: </div>
-      <%- cocktail.alcohols.map((a) => 
+    <%- cocktail.alcohols.map((a) => 
         `${a.name}`
       ) %>
-      <form id="add-alcohol-to-cocktail" action="/cocktails/<%= cocktail._id %>/alcohols" method="POST">
+    <form id="add-alcohol-to-cocktail" action="/cocktails/<%= cocktail._id %>/alcohols" method="POST">
         <select name="alcohols">
-          <%- alcohols.map(a => 
+            <%- alcohols.map(a => 
             `<option value="${a._id}">${a.name}</option>`
           ) %>
         </select>
         <button type="submit">Add Alcohol</button>
-      </form><br>
-      <td>
-        <% if (user.name === cocktail.mixologist.name) {%> 
+    </form><br>
+    <td>
+        <% if (user.name === cocktail.mixologist.name) {%>
         <form action="/cocktails/<%= cocktail._id %>?_method=DELETE" class='delete-form' method="POST">
             <button type='submit'>X</button>
         </form>
         <% } %>
     </td>
+<% } %> 
 </section>
 
 

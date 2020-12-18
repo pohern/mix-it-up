@@ -10,6 +10,7 @@ module.exports = {
     delete: deleteCocktail,
     drinkQuery,
     addToAlcohols,
+    update,
 }
 
 function newCocktail(req, res){
@@ -77,4 +78,11 @@ function addToAlcohols(req, res){
             res.redirect(`/cocktails/${cocktail._id}`)
         })
     })
+}
+function update(req, res){
+    Cocktail.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .then(() => {
+        res.redirect('/cocktails')
+    })
+
 }
