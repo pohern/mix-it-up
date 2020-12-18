@@ -9,8 +9,9 @@ This app allows users to create cocktails, and to see cocktails created by other
 
 
 ## Technologies Used
-
 - Heroku
+- EJS
+- Node.Js
 - JavaScript
 - HTML
 - CSS
@@ -20,6 +21,7 @@ This app allows users to create cocktails, and to see cocktails created by other
 - Git
 - Visual Studio Code
 - Google Chrome DevTools 
+- Google OAuth
 - Bootstap
 
 ## Links to Trello Board and Deployed App
