@@ -1,19 +1,25 @@
 # Mix It Up
-1. Create the express app
-2. Implement authentication
-3. Implement authorization
-4. Index view for users
-5. ‘Profile’ view for users Determine the method verb & route Write the UI Write the route Write the controller function Write the view
-6. Update functionality for Profile info Determine the method verb & route Write the UI Write the route Write the controller function Write the view
-7. ‘User show’ view
-    Add friend functionality
-    Add friend info to ‘Profile’ view
-8. ‘Add game’ view
-9. API call implementation
-10. ‘Drink detail’ view
-11. ‘Favorite’ functionality
-    ‘Add to favorites’ functionality
-12. ‘Reviews’ functionality
-13. ‘Drink collection’ view
-14. ‘Message Board’ functionality
-15. ‘Reply’ functionality
+This app allows users to create cocktails, and to see cocktails created by other users. There is also a message board, so users can discuss their favorite cocktails!
+
+![screenshots](CocktailAPIPull.ong)
+
+## Technologies Used
+
+- Heroku
+- JavaScript
+- HTML
+- CSS
+- Postman
+- API
+- GitHub
+- Git
+- Visual Studio Code
+- Google Chrome DevTools 
+- Bootstap
+
+## Links to Trello Board and Deployed App
+[You can check out the app here!](https://mix-it-up-2020.herokuapp.com/)
+[The original trello board can be found here!](https://trello.com/b/XCqykJ9W/mix-it-up)
+
+## Icebox Features
+Polish the app for a cleaner looking UI experience. Add a feature to favorite a cocktail. 
