@@ -24,6 +24,8 @@ This app allows users to create cocktails, and to see cocktails created by other
 
 ## Links to Trello Board and Deployed App
 [You can check out the app here!](https://mix-it-up-2020.herokuapp.com/)
+
+
 [The original trello board can be found here!](https://trello.com/b/XCqykJ9W/mix-it-up)
 
 ## Icebox Features
