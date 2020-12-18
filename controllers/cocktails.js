@@ -16,7 +16,7 @@ module.exports = {
 function newCocktail(req, res){
     Alcohol.find({})
     .populate('alcohols')
-    .then((alcohols, cocktail)=>{
+    .then((cocktail, alcohols)=>{
         res.render("cocktails/new", {
             title: "New Cocktail",
             user: req.user,
@@ -30,7 +30,6 @@ function newCocktail(req, res){
 function create(req, res){
     req.body.mixologist = req.user._id
     Cocktail.create(req.body)
-    .populate('alcohols')
     .then((cocktail)=>{
         res.redirect(`/cocktails/${cocktail._id}`)
     })
