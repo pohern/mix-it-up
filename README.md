@@ -23,7 +23,8 @@ This app allows users to create cocktails, and to see cocktails created by other
 - Google Chrome DevTools 
 - Google OAuth
 - Bootstap
-
+## Attributions
+TheCockTailDB- API used to get random cocktails
 ## Links to Trello Board and Deployed App
 [You can check out the app here!](https://mix-it-up-2020.herokuapp.com/)
 
