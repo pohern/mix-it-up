@@ -16,9 +16,8 @@ a {
 table {
   margin-left: 10%;
 }
-.form {
-  width: 400px;
-}
+
 .wide{
-  width: 500px;
+  margin-left: 700px;
+  margin-right: 700px;
 }
