@@ -57,7 +57,8 @@
     <% if (!cocktail.alcohols.length){ %> 
         <div>Alcohols: No alcohols added yet, check ingredients</div>
     <% } else { %> 
-        <div>Alcohols: <%= cocktail.alcohols[0].name %>, <%= cocktail.alcohols[1].name %></div>
+        <!-- Add Conditional Rendering if more than one alcohol -->
+        <div>Alcohols: <%= cocktail.alcohols[0].name %>, <%= cocktail.alcohols[1] %></div>
     <% } %> 
     <div>Mixologist:<%= cocktail.mixologist.name %></div>
     <td>
