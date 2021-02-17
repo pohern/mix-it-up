@@ -21,3 +21,23 @@ table {
   margin-left: 700px;
   margin-right: 700px;
 }
+
+.containerIndex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cFont {
+  font-size: 2rem;
+  font-family: 'Parisienne', cursive;
+  color: blue;
+  text-decoration: none;
+}
+
+.cFont1 {
+  font-size: 2.5rem;
+  text-decoration: underline;
+  font-family: 'Monoton', cursive;
+}
+

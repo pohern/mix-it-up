@@ -1,20 +1,19 @@
 <%- include('../partials/header') %>
-
-<table>
+<div class="containerIndex">
+  <table>
     <thead>
-        <tr>
-            <th>Name:</th>
-        </tr>
+      <tr>
+        <th class="cFont1">Cocktail List:</th>
+      </tr>
     </thead>
     <tbody>
-        <% cocktails.forEach(function(c) { %>
-        <tr>
-            <td><%= c.name %></td>
-            <td><a href="/cocktails/<%= c._id %>">DETAILS</a></td>
-            
-        </tr>
-        <% }) %>
+      <% cocktails.forEach(function(c) { %>
+      <tr>
+        <td class="cFont"><a class="cFont" href="/cocktails/<%= c._id %>"><%= c.name %></a></td>
+      </tr>
+      <% }) %>
     </tbody>
-</table>
+  </table>
+</div>
 
 <%- include('../partials/footer') %>
