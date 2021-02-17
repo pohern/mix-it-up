@@ -64,3 +64,20 @@ table {
 .font2 {
   font-family: 'Trade Winds', cursive;
 }
+
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fontMain {
+  font-family: 'Monoton', cursive;
+  font-size: 5rem;
+}
+
+.fontMain2 {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 1.5rem;
+}
