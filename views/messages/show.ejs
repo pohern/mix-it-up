@@ -13,7 +13,7 @@
 <% message.replies.forEach(reply => { %>
 <h6 class="font3">
   <%= reply.message %> - <%= reply.postedBy %>
-  <img id="avatarPhoto" width="25" src="<%= reply.avatar %>" alt="" />
+  <img id="avatarPhoto" width="25" src="<%= reply.avatar %>" alt="avatar" />
 </h6>
 <% if (user.name === reply.postedBy){ %>
   <form
