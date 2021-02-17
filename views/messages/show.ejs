@@ -1,23 +1,43 @@
 <%- include('../partials/header') %>
 
 <h3>Message Details</h3>
-<h4><%= message.title %></h4>
-<h5>Posted on <%= message.createdAt.toLocaleString() %> - <%= message.postedBy %> <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt=""></h5>
+<hr>
 
+<h4 class="font4"><%= message.title %></h4>
+<h4 class="font4">
+  Posted on <%= message.createdAt.toLocaleString() %> - <%= message.postedBy %>
+  <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt="" />
+</h4>
+
+<div class="repliesContainer">
 <% message.replies.forEach(reply => { %>
-    <h6><%= reply.message %> - <%= reply.postedBy %> <img id="avatarPhoto" width="25" src="<%= reply.avatar %>" alt=""></h6>
-    <% if (user.name === reply.postedBy){ %>
-        <form action="/messages/<%= message._id %>/<%= reply._id%>?_method=DELETE" class='delete-form' method="POST">
-            <button type='submit'>X</button>
-        </form>
-      <% } %> 
-<% }) %>
-
-<form action="/messages/<%= message._id %>" method="POST">
-  <div class="form-group">
-    <input type="text" class="form-control" aria-describedby="message" name="message" placeholder="Enter reply...">
-  </div>
-  <button type="submit" class="btn btn-primary">Reply</button>
-</form>
+<h6 class="font3">
+  <%= reply.message %> - <%= reply.postedBy %>
+  <img id="avatarPhoto" width="25" src="<%= reply.avatar %>" alt="" />
+</h6>
+<% if (user.name === reply.postedBy){ %>
+  <form
+    action="/messages/<%= message._id %>/<%= reply._id%>?_method=DELETE"
+    class="delete-form"
+    method="POST"
+  >
+    <button type="submit" class="btn btn-danger margin">X</button>
+  </form>
+</div>
+<% } %> <% }) %>
+<div class="containerMessage">
+  <form action="/messages/<%= message._id %>" method="POST">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        aria-describedby="message"
+        name="message"
+        placeholder="Enter reply..."
+      />
+    </div>
+    <button type="submit" class="btn btn-primary margin">Reply</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

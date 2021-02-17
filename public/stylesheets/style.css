@@ -72,6 +72,13 @@ table {
   align-items: center;
 }
 
+.repliesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .fontMain {
   font-family: 'Monoton', cursive;
   font-size: 5rem;
@@ -80,6 +87,17 @@ table {
 .fontMain2 {
   font-family: 'Major Mono Display', monospace;
   font-size: 1.5rem;
+}
+
+.font3 {
+  font-family: 'Dhurjati', sans-serif;
+  font-size: 2rem;
+  color: aliceblue;
+}
+
+.font4 {
+  font-family: 'Dhurjati', sans-serif;
+  font-size: 2.5rem;
 }
 
 .width {
