@@ -1,23 +1,24 @@
 <%- include('../partials/header') %>
 
 <h3><%= title %></h3>
-
-<div class="card" style="width: 18rem;">
-    <img src="<%= user.avatar %>" class="card-img-top" alt="...">
+<div class="containerU">
+  <div class="card color" style="width: 18rem">
+    <img src="<%= user.avatar %>" class="card-img-top" alt="..." />
     <div class="card-body">
-        <div class="card-body">
-            <h5 class="card-title">Name: <%= user.name %></h5>
-            <p class="card-text">Alias: <%= user.alias %></p>
-            <p class="card-text">Email: <%= user.email %></p>
-            <p class="card-text">Bio: <%= user.bio %></p>
-            <form action="/users/profile?_method=PUT" method="POST">
-            <label>Alias:</label>
-            <input type="text" name="alias">
-            <label>Bio:</label>
-            <input type="text" name="bio">
-            <button type="submit">Update</button>
-            </form>
-
+      <div class="card-body">
+        <h5 class="card-title">Name: <%= user.name %></h5>
+        <p class="card-text">Alias: <%= user.alias %></p>
+        <p class="card-text">Email: <%= user.email %></p>
+        <p class="card-text">Bio: <%= user.bio %></p>
+        <form action="/users/profile?_method=PUT" method="POST">
+          <label>Alias:</label>
+          <input type="text" name="alias" />
+          <label>Bio:</label>
+          <input type="text" name="bio" />
+          <button type="submit" class="btn btn-primary space">Update</button>
+        </form>
+      </div>
+    </div>
+    <%- include('../partials/footer') %>
   </div>
-
-<%- include('../partials/footer') %>
+</div>
