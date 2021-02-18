@@ -32,10 +32,10 @@
                 `<option value="${a._id}">${a.name}</option>`
               ) %>
             </select>
-            <button type="submit">Add Alcohol</button>
+            <button type="submit" class="btn btn-success">Add Alcohol</button>
         </form><br>
     <form action="/cocktails/<%= cocktail._id %>?_method=DELETE" class='delete-form' method="POST">
-        <button type='submit'>X</button>
+        <button type='submit' class="btn btn-danger">Delete Cocktail</button>
     </form>
     <% } else {%>
     <h2 class="font5"><%= cocktail.name %></h2>
