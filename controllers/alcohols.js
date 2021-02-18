@@ -9,7 +9,6 @@ module.exports = {
 function newAlcohol(req, res){
     Alcohol.find({})
     .then((alcohols)=>{
-        console.log('Heyyyy')
         res.render('alcohols/new', {title: 'Add Alcohol', alcohols, user:req.user})
     })
 }  

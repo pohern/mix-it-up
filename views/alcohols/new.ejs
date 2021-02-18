@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<h1>Add Alcohol</h1>
+<h1 class="fontMain">Add Alcohol</h1>
 <hr>
 <p>Please first ensure that the Alcohol is not in the dropdown:
     <select>
@@ -22,17 +22,18 @@
             <option value="Rum">Rum</option>
           </select>
       </label><br><br>
-    <input type="submit" value="Add Alcohol">
+    <input type="submit" class="btn btn-success" value="Add Alcohol">
   </form>
   <tbody><br>
-          <h4>Alcohols:</h4><br>
+          <h4 class="font4">Alcohols:</h4>
+          <hr>
         <% alcohols.forEach(function(a) { %>
         <tr>
             <td>Brand: <%= a.name %></td>
             <td>Liquor: <%= a.type %></td>
             <td>
                 <form action="/alcohols/<%= a._id%>?_method=DELETE" class='delete-form' method="POST">
-                    <button type='submit'>X</button>
+                    <button type='submit' class="btn btn-danger">X</button>
                 </form>
             </td>
         <% }) %>
