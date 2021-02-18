@@ -127,3 +127,22 @@ table {
 .margin {
   margin: 5px;
 }
+
+.buttonLayout {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rcFont {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.5rem;
+}
+
+.background {
+  background-color: grey;
+  border: none;
+}
