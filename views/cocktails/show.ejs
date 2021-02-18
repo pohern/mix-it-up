@@ -38,29 +38,30 @@
         <button type='submit'>X</button>
     </form>
     <% } else {%>
-    <div>Name: <%= cocktail.name %></div>
-    <div>Ingredients: <%= cocktail.ingredients %></div>
+    <h2 class="font5"><%= cocktail.name %></h2>
+    <hr>
+    <div class="font6">Ingredients: <%= cocktail.ingredients %></div>
     <% if (cocktail.garnishes === ''){%>
-    <div>Garnishes: <%= cocktail.garnishes %></div>
+    <div class="font6">Garnishes: <%= cocktail.garnishes %></div>
     <% } %>
-    <div>Glass Type: <%= cocktail.glassType %></div>
+    <div class="font6">Glass Type: <%= cocktail.glassType %></div>
     <% if (cocktail.prepTime === ''){%>
-    <div>Prep Time: <%= cocktail.prepTime %></div>
+    <div class="font6">Prep Time: <%= cocktail.prepTime %></div>
     <% } %>
     <% if (cocktail.difficulty === ''){%>
-    <div>Difficulty: <%= cocktail.difficulty %></div>
+    <div class="font6">Difficulty: <%= cocktail.difficulty %></div>
     <% } %>
-    <div>Steps: <%= cocktail.steps %></div>
+    <div class="font6">Steps: <%= cocktail.steps %></div>
     <% if (cocktail.iceCube === ''){%>
-    <div>Ice Cube Type: <%= cocktail.iceCube %></div>
+    <div class="font6">Ice Cube Type: <%= cocktail.iceCube %></div>
     <% } %>
     <% if (!cocktail.alcohols.length){ %> 
-        <div>Alcohols: No alcohols added yet, check ingredients</div>
+        <div class="font6">Alcohols: No alcohols added yet, check ingredients</div>
     <% } else { %> 
         <!-- Add Conditional Rendering if more than one alcohol -->
-        <div>Alcohols: <%= cocktail.alcohols[0].name %>, <%= cocktail.alcohols[1] %></div>
+        <h6 class="font6">Alcohols being added in the next version!</h3>
     <% } %> 
-    <div>Mixologist:<%= cocktail.mixologist.name %></div>
+    <div class="font6">Mixologist:<%= cocktail.mixologist.name %></div>
     <td>
       
     </td>
@@ -69,3 +70,5 @@
 
 
 <%- include('../partials/footer') %>
+
+<!-- <div class="font6">Alcohols:  cocktail.alcohols[0].name %>,  cocktail.alcohols[1].name %></div> -->

@@ -84,6 +84,12 @@ table {
   font-size: 5rem;
 }
 
+.font5 {
+  font-family: 'Parisienne', cursive;
+  font-size: 4rem;
+  color: aquamarine;
+}
+
 .fontMain2 {
   font-family: 'Major Mono Display', monospace;
   font-size: 1.5rem;
@@ -99,6 +105,11 @@ table {
   font-family: 'Dhurjati', sans-serif;
   font-size: 2.5rem;
 }
+
+.font6 {
+  font-family: 'Assistant', sans-serif;
+}
+
 
 .width {
   width: 50%;
